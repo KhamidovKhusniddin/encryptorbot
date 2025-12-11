@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Bot Data
+downloads/
+users.db
+users_export.csv
+
+# Scripts
+force_reset.sh

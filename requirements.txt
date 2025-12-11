@@ -1,0 +1,4 @@
+pyTelegramBotAPI
+cryptography
+pyzipper
+python-dotenv
