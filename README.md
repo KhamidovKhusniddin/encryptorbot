@@ -18,35 +18,6 @@ A powerful and secure Telegram bot designed to encrypt and decrypt files using m
 *   **Admin Panel**: Restricted area for the owner to view users, statistics, and broadcast messages.
 *   **User Analytics**: Tracks user joining and activity in a local SQLite database.
 
-## 🛠 Installation
-
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/your-username/secure-encryption-bot.git
-    cd secure-encryption-bot
-    ```
-
-2.  **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Configure Secrets**:
-    Copy the example env file and fill in your data:
-    ```bash
-    cp .env.example .env
-    nano .env
-    ```
-    *   Get `BOT_TOKEN` from @BotFather.
-    *   Set your `ADMIN_ID` (get it from @userinfobot).
-    *   Set a secure `ADMIN_LOGIN` and `ADMIN_PASS`.
-
-4.  **Run the Bot**:
-    ```bash
-    python3 main.py
-    ```
-
----
 
 # 🇺🇿 Telegram Shifrlash Boti
 
@@ -61,30 +32,7 @@ Fayllarni eng yuqori darajada himoyalash uchun mo'ljallangan Telegram boti. Ushb
 *   **Admin Panel**: Bot egasi uchun maxsus bo'lim (Statistika, Baza yuklash, Reklama yuborish).
 *   **Analitika**: Foydalanuvchilar bazasi (SQLite) avtomatik shakllanadi.
 
-## ⚙️ Ishga Tushirish
 
-1.  **Loyihani yuklab oling**:
-    ```bash
-    git clone https://github.com/username/repo-name.git
-    ```
-
-2.  **Kutubxonalarni o'rnating**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Sozlamalar (.env)**:
-    `.env` faylini yarating va ichiga ma'lumotlaringizni yozing:
-    ```ini
-    BOT_TOKEN=123456:ABC-DEF...
-    ADMIN_ID=SIZNING_ID_RAQAMINGIZ
-    ADMIN_LOGIN=admin
-    ADMIN_PASS=parol
-    ```
-
-4.  **Botni yoqing**:
-    ```bash
-    python3 main.py
     ```
 
 ## ⚠️ Disclaimer
