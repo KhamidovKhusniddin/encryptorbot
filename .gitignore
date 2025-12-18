@@ -3,12 +3,26 @@ __pycache__/
 *.py[cod]
 *$py.class
 venv/
+venv_bot/
 .env
 
 # Bot Data
 downloads/
+bot_downloads/
 users.db
 users_export.csv
+*.log
+
+# Encryption artifacts
+*.enc
+*.zip
 
 # Scripts
 force_reset.sh
+debug_config.py
+test_*.py
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store

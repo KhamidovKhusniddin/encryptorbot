@@ -1,94 +1,70 @@
-# 🔐 Secure Telegram File Encryption Bot
+# 🔐 Secure Crypto Bot 2.0
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![Telegram](https://img.shields.io/badge/Telegram-Bot-blue) ![License](https://img.shields.io/badge/License-MIT-green)
+![Python](https://img.shields.io/badge/Python-3.13-blue) ![Telegram](https://img.shields.io/badge/Telebot-Modular-blue) ![Encryption](https://img.shields.io/badge/Cipher-AES--RSA--ECC-red)
 
-**(Uzbek Description below 🇺🇿)**
-
-A powerful and secure Telegram bot designed to encrypt and decrypt files using military-grade algorithms (**AES-256**, **RSA**, **ECC**). It features a robust double-encryption mechanism where both the file integrity and the container (ZIP) are protected.
-
-## 🚀 Features
-
-*   **Multi-Algorithm Support**:
-    *   🗝 **AES-256**: High-speed symmetric encryption.
-    *   🛡 **RSA-2048**: Hybrid encryption (AES for data, RSA for keys).
-    *   🧬 **ECC (SECP256R1)**: Next-gen elliptic curve cryptography.
-*   **Double Security**: Files are encrypted, then packaged into an AES-256 encrypted ZIP archive.
-*   **Photo Support**: Automatically handles and encrypts images sent as photos.
-*   **Password Policies**: Enforces strong passwords (min 8 chars, alphanumeric) and PBKDF2 hashing (600k iterations).
-*   **Admin Panel**: Restricted area for the owner to view users, statistics, and broadcast messages.
-*   **User Analytics**: Tracks user joining and activity in a local SQLite database.
-
-## 🛠 Installation
-
-1.  **Clone the repository**:
-    ```bash
-    git clone https://github.com/your-username/secure-encryption-bot.git
-    cd secure-encryption-bot
-    ```
-
-2.  **Install dependencies**:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Configure Secrets**:
-    Copy the example env file and fill in your data:
-    ```bash
-    cp .env.example .env
-    nano .env
-    ```
-    *   Get `BOT_TOKEN` from @BotFather.
-    *   Set your `ADMIN_ID` (get it from @userinfobot).
-    *   Set a secure `ADMIN_LOGIN` and `ADMIN_PASS`.
-
-4.  **Run the Bot**:
-    ```bash
-    python3 main.py
-    ```
+A professional, modular Telegram bot designed for high-security file encryption and secure transmission. This project implements a **Double-Layer Security** model, combining individual file encryption with password-protected, encrypted ZIP containers.
 
 ---
 
-# 🇺🇿 Telegram Shifrlash Boti
+## 📜 Intellectual Property & Usage Notice
+> [!IMPORTANT]
+> **Copyright (c) 2024 [Khusniddin]**
+> This project represents unique architectural ideas and security implementations developed by the author. 
+> 
+> *   **Private Use**: This code is provided for demonstration and private educational purposes only.
+> *   **No Redistribution**: Unauthorized redistribution, cloning for commercial use, or rebranding of this bot's unique logic is prohibited without explicit permission from the author.
+> *   **Idea Protection**: The specific combination of inline navigation, persistent menus, and multi-algorithm strategy is a proprietary design choice of this project.
 
-Fayllarni eng yuqori darajada himoyalash uchun mo'ljallangan Telegram boti. Ushbu loyiha **AES**, **RSA** va **ECC** algoritmlari yordamida ma'lumotlaringizni shifrlaydi va ularni parol bilan himoyalangan arxivga joylaydi.
+---
 
-## ✨ Imkoniyatlar
+## 🛡 Security Architecture
 
-*   **3 Xil Algoritm**: O'zingizga mos xavfsizlik turini tanlang (Tezkor AES yoki Kuchli RSA/ECC).
-*   **Ikki Qavatli Himoya**: Faylning o'zi ham, u joylashgan ZIP papka ham alohida shifrlanadi.
-*   **Rasm Qo'llab-quvvatlash**: Rasmlarni sifatini buzmagan holda xavfsiz holatga keltiradi.
-*   **Kuchli Parol Talabi**: "12345" kabi oddiy parollar qabul qilinmaydi. 600,000 martalik xesh funksiyasi (PBKDF2) ishlatiladi.
-*   **Admin Panel**: Bot egasi uchun maxsus bo'lim (Statistika, Baza yuklash, Reklama yuborish).
-*   **Analitika**: Foydalanuvchilar bazasi (SQLite) avtomatik shakllanadi.
+The bot employs a "Defense in Depth" strategy:
+1.  **File-Level Encryption**: Each uploaded file is encrypted using the user's choice of algorithm:
+    *   **AES-256 (GCM)**: Authenticated symmetric encryption for speed and integrity.
+    *   **RSA-2048**: Asymmetric hybrid encryption for secure key exchange simulation.
+    *   **ECC (SECP256R1)**: Elliptic Curve Cryptography for modern, efficient security.
+2.  **Container Encryption**: Encrypted files are bundled into a **ZIP archive** (via `pyzipper`) with **AES-256** encryption at the archive level.
+3.  **Password Hardening**: Passwords undergo **PBKDF2** stretching with **600,000 iterations** to thwart brute-force attacks.
 
-## ⚙️ Ishga Tushirish
+## 🚀 Key Features
 
-1.  **Loyihani yuklab oling**:
-    ```bash
-    git clone https://github.com/username/repo-name.git
-    ```
+*   **Dual Keyboard UI**: Professional `InlineKeyboardMarkup` for actions combined with a `ReplyKeyboardMarkup` persistent menu for high-speed navigation.
+*   **Modular Design**: Refactored 2.0 architecture with separate handlers for Admin, Encryption, and User flows.
+*   **Admin Dashboard**:
+    *   📊 Real-time statistics and usage graphs (Matplotlib).
+    *   👤 Paginated user management system.
+    *   📢 Global broadcast capabilities.
+    *   🖥 System resource monitoring.
+*   **Multilingual Support**: Built-in support for **Uzbek**, **English**, and **Russian**.
+*   **QR Password Manager**: Generate QR codes for generated/used passwords for mobile convenience.
 
-2.  **Kutubxonalarni o'rnating**:
-    ```bash
-    pip install -r requirements.txt
-    ```
+## 📂 Project Structure
 
-3.  **Sozlamalar (.env)**:
-    `.env` faylini yarating va ichiga ma'lumotlaringizni yozing:
-    ```ini
-    BOT_TOKEN=123456:ABC-DEF...
-    ADMIN_ID=SIZNING_ID_RAQAMINGIZ
-    ADMIN_LOGIN=admin
-    ADMIN_PASS=parol
-    ```
+```text
+├── assets/             # Branding and banners
+├── handlers/           # Modular bot logic (admin, encryption, user)
+├── utils/              # Core utilities (crypto, db, monitoring)
+├── lang/               # Localization strings (JSON)
+├── main.py             # Entry point
+├── loader.py           # Singleton initializations
+└── config.py           # Environment-based configuration
+```
 
-4.  **Botni yoqing**:
-    ```bash
-    python3 main.py
-    ```
+## 🛠 Setup & Deployment
+
+1.  **Environment**: Create a `.env` file based on `.env.example`.
+2.  **Dependencies**: `pip install -r requirements.txt`
+3.  **Run**: `python main.py`
+
+For detailed server setup instructions, see:
+*   [VPS Deployment Guide (systemd)](DEPLOYMENT.md)
+*   [Cloud Hosting (PaaS) Guide](DEPLOYMENT_PAAS.md)
+
+---
 
 ## ⚠️ Disclaimer
-This project is for educational and privacy protection purposes. The developers are not responsible for any lost data due to forgotten passwords. **There is NO "Forgot Password" feature** – if you lose your password, the data is lost forever.
+This bot is a security tool. The author is not responsible for data loss due to forgotten passwords. **There is no "recovery" back-door** – encryption is absolute.
 
 ---
-Developed by [Khusniddin]
+**Developed with ❤️ by [Khusniddin]**

@@ -2,3 +2,9 @@ pyTelegramBotAPI
 cryptography
 pyzipper
 python-dotenv
+qrcode[pil]
+pillow
+schedule
+matplotlib
+psutil
+pytest

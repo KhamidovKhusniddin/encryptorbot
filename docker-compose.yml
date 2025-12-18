@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: encryption_bot
+    restart: unless-stopped
+    volumes:
+      - ./users.db:/app/users.db
+      - ./bot.log:/app/bot.log
+      - ./downloads:/app/downloads
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
